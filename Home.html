@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - E-commerce</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+
+    header {
+      background-color: #232f3e;
+      color: #fff;
+      padding: 15px;
+      text-align: left;
+      position: relative;
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .carousel {
+      overflow: hidden;
+      white-space: nowrap;
+      width: 100%; /* Adjust as needed */
+      box-sizing: border-box;
+      margin-bottom: 20px; /* Space between carousel and other content */
+    }
+
+    .carousel img {
+      width: 200px; /* Adjust as needed */
+      height: auto;
+      display: inline-block;
+    }
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    .scrolling-container {
+      display: inline-flex;
+      animation: scroll 10s linear infinite;
+    }
+
+    .cart-icon1 img {
+      width: 40px;
+      height: 40px;
+      margin-right: 1000px;
+
+    }
+
+
+    .search-bar1 {
+      flex-grow: 1;
+      max-width: 400px;
+      margin: 10px;
+      position: relative;
+      display: flex;
+    }
+
+    .search-input1 {
+      width: 100%;
+      padding: 10px;
+      border-radius: 4px;
+      border: none;
+      font-size: 16px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .product-card {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s;
+    }
+
+    .product-card:hover {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .product-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .product-info {
+      padding: 15px;
+      text-align: center;
+    }
+
+    .product-title {
+      font-size: 18px;
+      margin: 10px 0;
+      color: #333;
+    }
+
+    .product-price {
+      font-size: 16px;
+      color: #b12704;
+      margin-bottom: 10px;
+    }
+
+    .buy-now {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #ffa41c;
+      color: #fff;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .buy-now:hover {
+      background-color: #d38b14;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  
+  <div class="carousel">
+    <div class="scrolling-container">
+      <img src="buying products/fruits.jpg" alt="Image 1">
+      <img src="buying products/vegetables.jpg" alt="Image 2">
+      <img src="buying products/fruits.jpg" alt="Image 3">
+      <img src="buying products/dailyneeds.jpg" alt="Image 4">
+      <img src="buying products/chatka.jpg" alt="Image 5">
+      <!-- Repeat images to create a continuous loop -->
+      <img src="buying products/fruits.jpg" alt="Image 1">
+      <img src="buying products/vegetables.jpg" alt="Image 2">
+      <img src="buying products/pulses.jpg" alt="Image 3">
+      <img src="buying products/dailyneeds.jpg" alt="Image 4">
+      <img src="buying products/chatka.jpg" alt="Image 5">
+    </div>
+  </div>
+  <div style="text-align: center; padding: 10px; background-color: #121010; border-radius: 8px; margin-bottom: 20px;">
+    <h2>Welcome! Enjoy Shopping with Us</h2>
+    <p>Discover a wide range of products at unbeatable prices!</p>
+  </div>
+  <div class="header-content">
+    <div class="search-bar1">
+      <input type="text" class="search-input1" placeholder="Search for products">
+    </div>
+    <div class="cart-icon1">
+      <img src="cart.png" alt="Cart">
+    </div>
+  </div>
+  <p>Best offers just for you!</p>
+</header>
+
+<div class="container">
+  <!-- Product 1 -->
+  <div class="product-card">
+    <img src="buying products/pulses.jpg" alt="Product 1" class="product-image">
+    <div class="product-info">
+      <h3 class="product-title">Product 1</h3>
+      <p class="product-price">$99.99</p>
+      <a href="buying products/pulses.jpg" class="buy-now">Buy Now</a>
+    </div>
+  </div>
+
+  <!-- Product 2 -->
+  <div class="product-card">
+    <img src="buying products/vegetables.jpg" alt="Product 2" class="product-image">
+    <div class="product-info">
+      <h3 class="product-title">Product 2</h3>
+      <p class="product-price">$149.99</p>
+      <a href="buying products/vegetables.jpg" class="buy-now">Buy Now</a>
+    </div>
+  </div>
+
+  <!-- Product 3 -->
+  <div class="product-card">
+    <img src="buying products/fruits.jpg" alt="Product 3" class="product-image">
+    <div class="product-info">
+      <h3 class="product-title">Product 3</h3>
+      <p class="product-price">$199.99</p>
+      <a href="buying products/fruits.jpg" class="buy-now">Buy Now</a>
+    </div>
+  </div>
+
+  <!-- Product 4 -->
+  <div class="product-card">
+    <img src="buying products/chatka.jpg" alt="Product 4" class="product-image">
+    <div class="product-info">
+      <h3 class="product-title">Product 4</h3>
+      <p class="product-price">$249.99</p>
+      <a href="buying products/chatka.jpg" class="buy-now">Buy Now</a>
+    </div>
+  </div>
+
+  <!-- Product 5 -->
+  <div class="product-card">
+    <img src="buying products/dailyneeds.jpg" alt="Product 5" class="product-image">
+    <div class="product-info">
+      <h3 class="product-title">Product 5</h3>
+      <p class="product-price">$299.99</p>
+      <a href="buying products/dailyneeds.jpg" class="buy-now">Buy Now</a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
