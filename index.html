@@ -3,125 +3,389 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Your E-Commerce Website</title>
+    <title>My E-commerce Store</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <style>
+        header {
+            background-color: #1779f1;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .logo {
+            font-size: 40px;
+            font-weight: bold;
+            color: #fff;
+        }
+        .search-bar {
+            flex-grow: 1;
+            max-width: 200px;
+            margin: 10px;
+            position: relative;
+        }
+        .search-input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            font-size: 16px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .product-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s;
+        }
+        .product-card:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .product-info {
+            padding: 15px;
+            text-align: center;
+        }
+        .product-title {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #333;
+        }
+        .product-price {
+            font-size: 16px;
+            color: #b12704;
+            margin-bottom: 10px;
+        }
+        .buy-now {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ffa41c;
+            color: #fff;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .buy-now:hover {
+            background-color: #d38b14;
+        }
+        footer {
+            background-color: #232f3e;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
-    <div class="login-container">
-        <h2>Login</h2>
-        <form action="Shop.html" method="POST">
-            <label for="email">Email or Username</label>
-            <input type="text" id="email" name="email" required>
 
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" required>
-
-            <button type="submit">Login</button>
-
-            <div class="social-login">
-                <p>Or login with:</p>
-                <button class="google">Google</button>
-                <button class="facebook">Facebook</button>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <h1 class="logo">My Store</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="Shop.html">Shop</a></li>
+                    <li><a href="Categories.html">Categories</a></li>
+                    <li><a href="about.html">Contact</a></li>
+                    <li><a href="index.html">Login</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" class="search-input" placeholder="Search for products...">
             </div>
+            <div class="cart-icon">
+                <span id="cart-count">0</span>
+                <img src="cart.png" alt="Cart">
+            </div>
+        </div>
+    </header>
+    <header>
+    <style>
+      /* Adding animations to make the page more interactive */
+      
+      /* Fade-in animation for the header */
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      header {
+        background-color: #1779f1;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        animation: fadeIn 1s ease-out; /* Apply fade-in animation */
+      }
+      
+      /* Smooth scale effect on product cards */
+      @keyframes scaleUp {
+        from { transform: scale(0.9); opacity: 0; }
+        to { transform: scale(1); opacity: 1; }
+      }
+      .product-card {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s, transform 0.3s;
+        animation: scaleUp 0.5s ease-out; /* Apply scale animation */
+      }
+      .product-card:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        transform: scale(1.05); /* Slightly enlarge on hover */
+      }
+      
+      /* Button pulse effect */
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+      }
+      .buy-now {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #ffa41c;
+        color: #fff;
+        border-radius: 4px;
+        text-decoration: none;
+        transition: background-color 0.3s;
+        animation: pulse 1.5s infinite; /* Pulse animation */
+      }
+      .buy-now:hover {
+        background-color: #d38b14;
+        animation: none; /* Stop pulsing on hover */
+      }
+      </style>
+      </header>
+      <!-- home content -->
+    <section class="home">
+      <div class="content">
+        <h1> <span>Grocery Products</span>
+          <br>
+          Up To <span id="span2">50%</span> Off
+        </h1>
+        <p>Discover the best deals on top-quality Grocery products
+          <br>Shop smart, live smarter
+        </p>
+        <div class="btn"><button>Shop Now</button></div>
+  
+      </div>
+      <div class="img">
+        <img src="./images/background.png" alt="">
+      </div>
+    </section>
+      <!-- home content -->
+       
+      
 
-            <p class="signup-link">Don't have an account? <a href="/signup">Sign Up</a></p>
-            <p class="forgot-password"><a href="/forgot-password">Forgot Password?</a></p>
-        </form>
-    </div>
+    <!-- Product Grid -->
+    <section class="product-grid">
+        <div class="product" data-price="20">
+            <img src="buying products/green.jpg" alt="Product 1">
+            <h2>Vegetables</h2>
+            <p>22.00</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="product" data-price="35">
+            <img src="buying products/daily.jpg" alt="Product 2">
+            <h2>Daily Needs</h2>
+            <p>15.00</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="product" data-price="15">
+            <img src="buying products/proties.jpg" alt="Product 3">
+            <h2>Proteins</h2>
+            <p>350.00</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="product" data-price="15">
+            <img src="buying products/salt.jpg" alt="Product 4">
+            <h2>Salt</h2>
+            <p>150.00</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="product" data-price="15">
+            <img src="buying products/PastsNoodles.jpg" alt="Product 5">
+            <h2>Noodles</h2>
+            <p>90.00</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="product" data-price="15">
+          <img src="buying products/honey.jpg" alt="Product 3">
+          <h2>Honey</h2>
+          <p>50.00</p>
+          <button onclick="addToCart()">Add to Cart</button>
+        </div>
+         <div class="product" data-price="15">
+          <img src="buying products/buscits.jpg" alt="Product 3">
+          <h2>Buscits</h2>
+          <p>40.00</p>
+         <button onclick="addToCart()">Add to Cart</button>
+        </div>
+      <div class="product" data-price="15">
+        <img src="buying products/grains.jpg" alt="Product 3">
+        <h2>chawal</h2>
+        <p>35.00</p>
+       <button onclick="addToCart()">Add to Cart</button>
+      </div>
+      <div class="product" data-price="15">
+      <img src="buying products/snacks.jpg" alt="Product 3">
+      <h2>Snacks</h2>
+      <p>50.00</p>
+      <button onclick="addToCart()">Add to Cart</button>
+   </div>
+<div class="product" data-price="15">
+  <img src="buying products/Beverages.jpg" alt="Product 3">
+  <h2>Beverages</h2>
+  <p>80.00</p>
+  <button onclick="addToCart()">Add to Cart</button>
+</div>
+<div class="product" data-price="15">
+  <img src="buying products/surf.jpg" alt="Product 3">
+  <h2>Surf Excel</h2>
+  <p>30.00</p>
+  <button onclick="addToCart()">Add to Cart</button>
+</div>
+<div class="product" data-price="15">
+  <img src="buying products/surfpowder" alt="Product 3">
+  <h2>Surf Excel powder</h2>
+  <p>50.00</p>
+  <button onclick="addToCart()">Add to Cart</button>
+</div>
+<div class="product" data-price="15">
+  <img src="buying products/oil.jpg" alt="Product 3">
+  <h2>Oil</h2>
+  <p>150.00</p>
+  <button onclick="addToCart()">Add to Cart</button>
+</div>
+<div class="product" data-price="15">
+  <img src="buying products/dettol.jpg" alt="Product 3">
+  <h2>dettol</h2>
+  <p>35.00</p>
+  <button onclick="addToCart()">Add to Cart</button>
+</div>
+<div class="product" data-price="15">
+  <img src="buying products/thumbsup.jpg" alt="Product 3">
+  <h2>thumbsup</h2>
+  <p>50.00</p>
+  <button onclick="addToCart()">Add to Cart</button>
+</div>
+<div class="product" data-price="15">
+  <img src="buying products/fanta.jpg" alt="Product 3">
+  <h2>Fanta</h2>
+  <p>50.00</p>
+  <button onclick="addToCart()">Add to Cart</button>
+</div>
+<div class="product" data-price="15">
+  <img src="buying products/masale.jpg" alt="Product 3">
+  <h2>Masale</h2>
+  <p>50.00</p>
+  <button onclick="addToCart()">Add to Cart</button>
+</div>
+<div class="product" data-price="15">
+  <img src="buying products/milk.jpg" alt="Product 3">
+  <h2>Milk</h2>
+  <p>60.00</p>
+  <button onclick="addToCart()">Add to Cart</button>
+</div>
+        <!-- Add more products as needed -->
+    </section>
+
+    <script src="script.js"></script>
 </body>
+
+
+
+</html>
+<html>
+
 <style>
-    
-    * {
-    box-sizing: border-box;
+  footer {
+    background-color: #232f3e;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+  }
+  .footer-container {
+    display: flex;
+    position:absolute;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  .footer-column {
+    flex: 1;
+    position:absolute;
+    min-width: 200px;
+    margin: 10px;
+  }
+  .footer-column h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #ffa41c;
+  }
+  .footer-column p,
+  .footer-column ul {
     margin: 0;
     padding: 0;
-}
-
-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-}
-
-.login-container {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    width: 100%;
-    text-align: center;
-}
-
-h2 {
-    margin-bottom: 20px;
-    color: #333;
-}
-
-label {
-    display: block;
-    margin-top: 10px;
-    text-align: left;
-    color: #555;
-}
-
-input[type="text"],
-input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-button:hover {
-    background-color: #218838;
-}
-
-.social-login {
-    margin: 20px 0;
-}
-
-.social-login button {
-    background-color: #4267B2;
-    color: white;
-    width: 48%;
-    margin: 5px;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.social-login .google {
-    background-color: #db4437;
-}
-
-.signup-link, .forgot-password {
-    margin-top: 20px;
-}
-
-.signup-link a, .forgot-password a {
-    color: #007bff;
+    list-style: none;
+  }
+  .footer-column ul li {
+    margin: 5px 0;
+  }
+  .footer-column ul li a {
+    color: #fff;
     text-decoration: none;
-}
-
-.signup-link a:hover, .forgot-password a:hover {
-    text-decoration: underline;
-}</style>
+    transition: color 0.3s;
+  }
+  .footer-column ul li a:hover {
+    color: #ffa41c;
+  }
+  .social-media {
+    display: flex;
+    justify-content: center;
+  }
+  .social-media li {
+    margin: 0 10px;
+  }
+  .social-media img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+    transition: filter 0.3s;
+  }
+  .social-media img:hover {
+    filter: brightness(0) invert(0.7);
+  }
+  .footer-bottom {
+    margin-top: 20px;
+    font-size: 14px;
+  }
+</style>
 </html>
